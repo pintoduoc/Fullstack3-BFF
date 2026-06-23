@@ -4,7 +4,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-@FeignClient(name = "report-service", url = "http://report-service:8081/api/reporte-incendio")
+@FeignClient(name = "report-service", path = "/api/reporte-incendio")
 public interface ReportClient {
 
     @GetMapping

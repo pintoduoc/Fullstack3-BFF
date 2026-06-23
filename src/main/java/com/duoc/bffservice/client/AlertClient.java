@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import java.util.List;
 
-@FeignClient(name = "alert-service", url = "http://alert-service:8083/api/alerta-emergencia")
+@FeignClient(name = "alert-service", path = "/api/alerta-emergencia")
 public interface AlertClient {
 
     @GetMapping
