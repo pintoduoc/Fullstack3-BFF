@@ -27,8 +27,12 @@ public class BffController {
     // --- MÓDULO DE AUTENTICACIÓN ---
     @GetMapping("/login/{rut}")
     public ResponseEntity<?> iniciarSesion(@PathVariable String rut) {
-        // El BFF valida la existencia del usuario a través del user-service
         return ResponseEntity.ok(userClient.getUsuarioByRut(rut));
+    }
+
+    @PostMapping("/usuarios")
+    public ResponseEntity<?> registrarUsuario(@RequestBody Object nuevoUsuario) {
+        return ResponseEntity.ok(userClient.createUsuario(nuevoUsuario));
     }
 
     // --- MÓDULO DE DASHBOARD (ORQUESTACIÓN Y CÁLCULO) ---
