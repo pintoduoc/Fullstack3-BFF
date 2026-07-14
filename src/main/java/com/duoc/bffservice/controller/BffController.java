@@ -30,6 +30,11 @@ public class BffController {
         return ResponseEntity.ok(userClient.getUsuarioByRut(rut));
     }
 
+    @GetMapping("/usuarios")
+    public ResponseEntity<?> listarUsuarios() {
+        return ResponseEntity.ok(userClient.getAllUsuarios());
+    }
+
     @PostMapping("/usuarios")
     public ResponseEntity<?> registrarUsuario(@RequestBody Object nuevoUsuario) {
         return ResponseEntity.ok(userClient.createUsuario(nuevoUsuario));

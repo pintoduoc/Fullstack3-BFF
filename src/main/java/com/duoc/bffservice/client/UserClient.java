@@ -12,6 +12,9 @@ public interface UserClient {
     @GetMapping("/rut/{rut}")
     Object getUsuarioByRut(@PathVariable("rut") String rut);
 
+    @GetMapping
+    Object getAllUsuarios();
+
     @PostMapping
     Object createUsuario(@RequestBody Object usuario);
 
