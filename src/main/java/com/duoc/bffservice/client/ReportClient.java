@@ -10,6 +10,9 @@ public interface ReportClient {
     @GetMapping
     List<Object> getAllReportes();
 
+    @GetMapping("/{id}")
+    Object getReporteById(@PathVariable("id") Long id);
+
     @PostMapping
     Object crearReporte(@RequestBody Object reporte);
 

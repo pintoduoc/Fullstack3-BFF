@@ -64,6 +64,11 @@ public class BffController {
         return ResponseEntity.ok(reportClient.crearReporte(nuevoReporte));
     }
 
+    @GetMapping("/reportes/{id}")
+    public ResponseEntity<?> obtenerReportePorId(@PathVariable Long id) {
+        return ResponseEntity.ok(reportClient.getReporteById(id));
+    }
+
     @PutMapping("/reportes/{id}")
     public ResponseEntity<?> actualizarReporte(@PathVariable Long id, @RequestBody Object reporteEditado) {
         return ResponseEntity.ok(reportClient.actualizarReporte(id, reporteEditado));
